@@ -25,9 +25,8 @@
     "async"
   ],
   "dependencies": {
-    "load-semver": "^0.1.0",
-    "npm-cli-version": "^0.1.0",
-    "pinkie-promise": "^2.0.1"
+    "load-semver": "^0.2.0",
+    "npm-cli-version": "^0.2.0"
   },
   "devDependencies": {
     "@shinnn/eslint-config-node": "^3.0.0",
@@ -36,10 +35,6 @@
     "tape": "^4.6.3"
   },
   "eslintConfig": {
-    "extends": "@shinnn/node",
-    "rules": {
-      "no-var": "off",
-      "prefer-arrow-callback": "off"
-    }
+    "extends": "@shinnn/node"
   }
 }

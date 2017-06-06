@@ -1,17 +1,18 @@
 'use strict';
 
-var loadSemver = require('load-semver');
-var npmCliVersion = require('npm-cli-version');
-var PinkiePromise = require('pinkie-promise');
+const loadSemver = require('load-semver');
+const npmCliVersion = require('npm-cli-version');
+
+function parseVersion(arr) {
+  const parse = arr[0];
+  const version = arr[1];
+
+  return parse(version, false);
+}
 
 module.exports = function parseNpmVersion() {
-  return PinkiePromise.all([
+  return Promise.all([
     loadSemver(),
     npmCliVersion()
-  ]).then(function(results) {
-    var parse = results[0];
-    var version = results[1];
-
-    return parse(version, false);
-  });
+  ]).then(parseVersion);
 };
