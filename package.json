@@ -1,6 +1,6 @@
 {
   "name": "parse-npm-version",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Get the currently installed CLI npm version and parse it with node-semver",
   "repository": "shinnn/parse-npm-version",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
@@ -8,7 +8,7 @@
     "pretest": "eslint --fix --format=codeframe index.js test.js",
     "test": "nyc node test.js"
   },
-  "license": "MIT",
+  "license": "CC0-1.0",
   "files": [
     "index.js"
   ],
