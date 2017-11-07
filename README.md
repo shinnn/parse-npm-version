@@ -58,4 +58,4 @@ parseNpmVersion().then(result => {
 
 ## License
 
-[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
+[ISC License](./LICENSE) © 2017 Shinnosuke Watanabe
