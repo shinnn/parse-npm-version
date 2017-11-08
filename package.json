@@ -29,10 +29,10 @@
     "npm-cli-version": "^0.2.0"
   },
   "devDependencies": {
-    "@shinnn/eslint-config-node": "^3.0.0",
-    "eslint": "^3.19.0",
-    "nyc": "^11.0.2",
-    "tape": "^4.6.3"
+    "@shinnn/eslint-config-node": "^4.0.2",
+    "eslint": "^4.10.0",
+    "nyc": "^11.3.0",
+    "tape": "^4.8.0"
   },
   "eslintConfig": {
     "extends": "@shinnn/node"
