@@ -1,6 +1,6 @@
 {
   "name": "parse-npm-version",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Get the currently installed CLI npm version and parse it with node-semver",
   "repository": "shinnn/parse-npm-version",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
