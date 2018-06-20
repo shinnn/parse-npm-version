@@ -3,16 +3,11 @@
 const loadSemver = require('load-semver');
 const npmCliVersion = require('npm-cli-version');
 
-function parseVersion(arr) {
-  const parse = arr[0];
-  const version = arr[1];
-
-  return parse(version, false);
-}
-
-module.exports = function parseNpmVersion() {
-  return Promise.all([
+module.exports = async function parseNpmVersion() {
+  const [parse, version] = await Promise.all([
     loadSemver(),
     npmCliVersion()
-  ]).then(parseVersion);
+  ]);
+
+  return parse(version, false);
 };
