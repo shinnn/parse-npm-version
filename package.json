@@ -1,40 +1,40 @@
 {
-  "name": "parse-npm-version",
-  "version": "0.3.0",
-  "description": "Get the currently installed CLI npm version and parse it with node-semver",
-  "repository": "shinnn/parse-npm-version",
-  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
-  "scripts": {
-    "pretest": "eslint --fix --format=codeframe index.js test.js",
-    "test": "nyc node test.js"
-  },
-  "license": "ISC",
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "npm",
-    "cli",
-    "version",
-    "semver",
-    "parse",
-    "major",
-    "minor",
-    "patch",
-    "promise",
-    "async"
-  ],
-  "dependencies": {
-    "load-semver": "^0.2.0",
-    "npm-cli-version": "^0.2.0"
-  },
-  "devDependencies": {
-    "@shinnn/eslint-config-node": "^4.0.2",
-    "eslint": "^4.10.0",
-    "nyc": "^11.3.0",
-    "tape": "^4.8.0"
-  },
-  "eslintConfig": {
-    "extends": "@shinnn/node"
-  }
+	"name": "parse-npm-version",
+	"version": "0.3.0",
+	"description": "Get the currently installed CLI npm version and parse it with node-semver",
+	"repository": "shinnn/parse-npm-version",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"scripts": {
+		"pretest": "eslint --fix --format=codeframe .",
+		"test": "nyc node test.js"
+	},
+	"license": "ISC",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"npm",
+		"cli",
+		"version",
+		"semver",
+		"parse",
+		"major",
+		"minor",
+		"patch",
+		"promise",
+		"async"
+	],
+	"dependencies": {
+		"load-semver": "^1.0.0",
+		"npm-cli-version": "^0.3.0"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config-node": "^5.0.0",
+		"eslint": "^4.19.1",
+		"nyc": "^12.0.2",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn/node"
+	}
 }

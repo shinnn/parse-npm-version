@@ -11,9 +11,9 @@ const parseNpmVersion = require('parse-npm-version');
 
 (async () => {
   const result = await parseNpmVersion(); /* SemVer {
-    raw: '5.3.0',
-    major: 5,
-    minor: 3,
+    raw: '6.1.0',
+    major: 6,
+    minor: 1,
     patch: 0,
     prerelease: [],
     ...
@@ -39,16 +39,16 @@ const parseNpmVersion = require('parse-npm-version');
 
 Return: `Promise<SemVer>`
 
-The resultant promise will be fulfilled with a [`SemVer`](https://github.com/npm/node-semver/blob/v5.4.1/semver.js#L272) instance for the current [`npm --version`](https://docs.npmjs.com/misc/config#version).
+The resultant promise will be fulfilled with a [`SemVer`](https://github.com/npm/node-semver/blob/v5.5.0/semver.js#L284) instance for the current [`npm --version`](https://docs.npmjs.com/misc/config#version).
 
 ```javascript
 parseNpmVersion().then(result => {
   result.constructor.name; //=> 'SemVer'
-  result.toString(); //=> '5.3.0'
+  result.toString(); //=> '6.1.0'
 
-  result.compare('5.2.0'); //=> 1
-  result.compare('5.3.0'); //=> 0
-  result.compare('5.4.0'); //=> -1
+  result.compare('6.0.0'); //=> 1
+  result.compare('6.1.0'); //=> 0
+  result.compare('6.2.0'); //=> -1
 });
 ```
 
@@ -58,4 +58,4 @@ parseNpmVersion().then(result => {
 
 ## License
 
-[ISC License](./LICENSE) © 2017 Shinnosuke Watanabe
+[ISC License](./LICENSE) © 2017 - 2018 Shinnosuke Watanabe
