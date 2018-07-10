@@ -14,5 +14,15 @@ test('parseNpmVersion()', async t => {
 	t.ok(Array.isArray(result.prerelease), 'should get pre-release metadata.');
 	t.equal(result.compare('1.0.0'), 1, 'should have SemVer instance methods.');
 
+	try {
+		t.fail(`Unexpectedly resolved: ${await parseNpmVersion(1)}`);
+	} catch (err) {
+		t.equal(
+			err.toString(),
+			'RangeError: Expected no arguments, but got 1 argumrnts.',
+			'should fail when it takes more than one argument.'
+		);
+	}
+
 	t.end();
 });
