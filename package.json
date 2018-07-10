@@ -1,12 +1,12 @@
 {
 	"name": "parse-npm-version",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Get the currently installed CLI npm version and parse it with node-semver",
 	"repository": "shinnn/parse-npm-version",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
 	"scripts": {
-		"pretest": "eslint --fix --format=codeframe .",
-		"test": "nyc node test.js"
+		"pretest": "eslint .",
+		"test": "nyc --reporter=html --reporter=text node test.js"
 	},
 	"license": "ISC",
 	"files": [
@@ -26,11 +26,11 @@
 	],
 	"dependencies": {
 		"load-semver": "^1.0.0",
-		"npm-cli-version": "^0.3.0"
+		"npm-cli-version": "^1.0.0"
 	},
 	"devDependencies": {
-		"@shinnn/eslint-config-node": "^5.0.0",
-		"eslint": "^4.19.1",
+		"@shinnn/eslint-config-node": "^6.0.0",
+		"eslint": "^5.0.1",
 		"nyc": "^12.0.2",
 		"tape": "^4.9.1"
 	},
