@@ -1,7 +1,9 @@
 'use strict';
 
-const loadSemver = require('load-semver');
+const importPackage = require('import-package');
 const npmCliVersion = require('npm-cli-version');
+
+importPackage.preload('semver');
 
 module.exports = async function parseNpmVersion(...args) {
 	const argLen = args.length;
@@ -11,7 +13,7 @@ module.exports = async function parseNpmVersion(...args) {
 	}
 
 	const [parse, version] = await Promise.all([
-		loadSemver(),
+		importPackage('semver'),
 		npmCliVersion()
 	]);
 

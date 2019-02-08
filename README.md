@@ -1,19 +1,19 @@
 # parse-npm-version
 
 [![npm version](https://img.shields.io/npm/v/parse-npm-version.svg)](https://www.npmjs.com/package/parse-npm-version)
-[![Build Status](https://travis-ci.org/shinnn/parse-npm-version.svg?branch=master)](https://travis-ci.org/shinnn/parse-npm-version)
+[![Build Status](https://travis-ci.com/shinnn/parse-npm-version.svg?branch=master)](https://travis-ci.com/shinnn/parse-npm-version)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/parse-npm-version.svg)](https://coveralls.io/github/shinnn/parse-npm-version?branch=master)
 
-Parse the installed [`npm` CLI](https://github.com/npm/npm) version with [`node-semver`](https://github.com/npm/node-semver)
+Parse the installed [`npm` CLI](https://github.com/npm/cli) version with [`node-semver`](https://github.com/npm/node-semver)
 
 ```javascript
 const parseNpmVersion = require('parse-npm-version');
 
 (async () => {
   const result = await parseNpmVersion(); /* SemVer {
-    raw: '6.1.0',
+    raw: '6.7.0',
     major: 6,
-    minor: 1,
+    minor: 7,
     patch: 0,
     prerelease: [],
     ...
@@ -23,7 +23,7 @@ const parseNpmVersion = require('parse-npm-version');
 
 ## Installation
 
-[Use npm.](https://docs.npmjs.com/cli/install)
+[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/about-npm/).
 
 ```
 npm install parse-npm-version
@@ -39,17 +39,19 @@ const parseNpmVersion = require('parse-npm-version');
 
 Return: `Promise<SemVer>`
 
-The resultant promise will be fulfilled with a [`SemVer`](https://github.com/npm/node-semver/blob/v5.5.0/semver.js#L284) instance for the current [`npm --version`](https://docs.npmjs.com/misc/config#version).
+The resultant promise will be fulfilled with a [`SemVer`](https://github.com/npm/node-semver/blob/v5.6.0/semver.js#L287) instance for the current [`npm --version`](https://docs.npmjs.com/misc/config#version).
 
 ```javascript
-parseNpmVersion().then(result => {
-  result.constructor.name; //=> 'SemVer'
-  result.toString(); //=> '6.1.0'
+(async () => {
+  const result = await parseNpmVersion();
 
-  result.compare('6.0.0'); //=> 1
-  result.compare('6.1.0'); //=> 0
-  result.compare('6.2.0'); //=> -1
-});
+  result.constructor.name; //=> 'SemVer'
+  result.toString(); //=> '6.7.0'
+
+  result.compare('6.6.0'); //=> 1
+  result.compare('6.7.0'); //=> 0
+  result.compare('6.8.0'); //=> -1
+})();
 ```
 
 ## Related project
@@ -58,4 +60,4 @@ parseNpmVersion().then(result => {
 
 ## License
 
-[ISC License](./LICENSE) © 2017 - 2018 Shinnosuke Watanabe
+[ISC License](./LICENSE) © 2017 - 2019 Shinnosuke Watanabe
